@@ -112,12 +112,21 @@ public class Menu {
             case 2:
                 //Регистрация
                 //TODO
+                /*
+                1. Запросить email и password
+                Отправить в сервис на регистрацию
+                Проверить что вернулось - если null - то провал
+                Если не null - то все прошло ок
+                 */
                 break;
             case 3:
                 service.logout();
+                System.out.println("Выполнен выход");
+                waitRead();
                 break;
             default:
                 System.out.println("\nНе верный ввод");
+                waitRead();
         }
     }
 

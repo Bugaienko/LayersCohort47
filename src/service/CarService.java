@@ -21,6 +21,7 @@ public class CarService {
         this.userRepository = userRepository;
     }
 
+
     public User registerUser(String email, String password) {
         // Добавить валидацию email и пароль
 

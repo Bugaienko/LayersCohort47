@@ -26,14 +26,25 @@ public class CarRepository {
 
     public CarRepository() {
         this.cars = new MagicList<>();
+        initData();
     }
 
+    private void initData() {
+        cars.addAll(
+                new Car(currentId.getAndIncrement(), "Audi", 2021, 200),
+                new Car(currentId.getAndIncrement(), "BMW", 2022, 220),
+                new Car(currentId.getAndIncrement(), "VW", 2015, 350)
+
+        );
+    }
     //Create - add
     public void addCar(String model, int year, int power) {
         //currentId.getAndIncrement() - получение текущего id и увеличение его на +1
         Car car = new Car(currentId.getAndIncrement(), model, year, power);
         cars.add(car);
     }
+
+
 
     // READ
     public MyList<Car> getAllCars() {

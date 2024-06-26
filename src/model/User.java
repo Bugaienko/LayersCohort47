@@ -10,11 +10,13 @@ import util.MyList;
 public class User {
     private String email;
     private String password;
+    private Role role;
     private final MyList<Car> userCars;
 
     public User(String email, String password) {
         this.email = email;
         this.password = password;
+        this.role = Role.USER;
         this.userCars = new MagicList<>();
     }
 
@@ -44,5 +46,13 @@ public class User {
 
     public MyList<Car> getUserCars() {
         return userCars;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

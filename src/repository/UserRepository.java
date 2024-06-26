@@ -4,6 +4,7 @@ package repository;
 @author Sergey Bugaienko
 */
 
+import model.Role;
 import model.User;
 import util.MagicList;
 import util.MyList;
@@ -14,6 +15,22 @@ public class UserRepository {
 
     public UserRepository() {
         this.users = new MagicList<>();
+        initUsers();
+    }
+
+    private void initUsers(){
+        User admin = new User("1", "1");
+        admin.setRole(Role.ADMIN);
+
+        User moder = new User("2", "2");
+        moder.setRole(Role.MODERATOR);
+
+        users.addAll(admin, moder);
+        users.addAll(
+                new User("test@mail.net", "qwerty!Q1"),
+                new User("3", "3")
+        );
+
     }
 
     public User addUser(String email, String password) {
