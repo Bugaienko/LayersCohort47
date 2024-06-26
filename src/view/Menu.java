@@ -12,6 +12,20 @@ public class Menu {
     private final CarService service;
     private final Scanner scanner = new Scanner(System.in);
 
+    private final static String RED_COLOR = "\u001B[31m";
+    private final static String BLACK_COLOR = "\u001B[0m";
+
+    public static final String RESET_COLOR = "\u001B[0m";
+    public static final String COLOR_BLACK = "\u001B[30m";
+    public static final String COLOR_RED = "\u001B[31m";
+    public static final String COLOR_GREEN = "\u001B[32m";
+    public static final String COLOR_YELLOW = "\u001B[33m";
+    public static final String COLOR_BLUE = "\u001B[34m";
+    public static final String COLOR_PURPLE = "\u001B[35m";
+    public static final String COLOR_CYAN = "\u001B[36m";
+
+    public static final String COLOR_WHITE = "\u001B[37m";
+
     public Menu(CarService service) {
         this.service = service;
     }
@@ -22,11 +36,11 @@ public class Menu {
 
     private void showMenu() {
         while (true) {
-            System.out.println("Добро пожаловать в меню");
-            System.out.println("1. Меню автомобилей");
+            System.out.println(RED_COLOR + "Добро пожаловать в меню" + RESET_COLOR);
+            System.out.println(COLOR_GREEN + "1. Меню автомобилей");
             System.out.println("2. Меню пользователей");
             System.out.println("3. Меню администратора");
-            System.out.println("0. Выход");
+            System.out.println("0. Выход" + RESET_COLOR);
             System.out.println("\nСделайте выбор:");
             int choice = scanner.nextInt();
             scanner.nextLine();
